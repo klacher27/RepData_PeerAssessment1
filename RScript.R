@@ -26,10 +26,10 @@ g <- g + geom_histogram(binwidth=1000, colour = "blue", fill = "black")
 g <- g + ggtitle("Frequency of Total Steps Taken in a Day")
 
 ## Add x and y axis labels
-g <- g + xlab("Total Steps in a Day (1000 step increments")
-g <- g + ylab("Frequency")
+g <- g + xlab("Total Steps Taken in a Day (1000 step increments)")
+g <- g + ylab("Frequency (count of occurrences")
 
-## Display plot
+## Display histogram
 print(g)
 
 ## Part 2 - Calculate mean and median of total number of steps taken per day
@@ -86,7 +86,7 @@ sprintf("Total number of NA values in dataset: %.0f", totalNAs)
 ##          could use the mean/median for that day, or the mean for that 5-minute interval, etc.
 ## Part 3 - Create a new dataset that is equal to the original dataset but with the missing data ﬁlled in.
 ## 
-## Copy originald dataset
+## Copy original dataset
 cdf <- df
 ## Add a column with interval as a factor
 cdf <- mutate(cdf, finterval=as.factor(interval))
@@ -112,7 +112,7 @@ g <- g + ggtitle("Frequency of Total Steps Taken in a Day")
 
 ## Add x and y axis labels
 g <- g + xlab("Total Steps in a Day (1000 step increments)")
-g <- g + ylab("Frequency")
+g <- g + ylab("Frequency (count of occurrences)")
 
 ## Display plot
 print(g)
@@ -172,3 +172,6 @@ g <- g + ylab("Average Number of Steps")
 ## Display plot
 print(g)
 
+maxSteps
+sprintf("Weekday 5-minute interval with max number of steps (averaged over all days): %s", maxWeekdaySteps$interval)
+sprintf("Weekend 5-minute interval with max number of steps (averaged over all days): %s", maxWeekendSteps$interval)
